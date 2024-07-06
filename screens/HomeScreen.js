@@ -33,21 +33,25 @@ function HomeScreen() {
             imgSRC: require("../assets/walmart.jpeg"),
             compName: "Walmart",
             perc: "4%",
-            color: '#0073e6'
+            color: '#0073e6',
+            back: require("../assets/walcard.jpg")
+
         },
         {
             id: '3',
             imgSRC:require("../assets/bestbuy.jpg"),
             compName: "Best Buy",
             perc: "3%",
-            color: '#0000cc'
+            color: '#0000cc',
+            back: require("../assets/priceback.jpeg")
         },
         {
             id: '4',
             imgSRC: require("../assets/ticketmaster.png"),
             compName:"TicketMaster",
             perc: "3%",
-            color:'#3333ff'
+            color:'#3333ff',
+            back: require("../assets/party.jpg")
         }
     ]
    const recentAct =[
@@ -119,6 +123,7 @@ function HomeScreen() {
          compName={item.compName} 
          perc={item.perc} 
          color={item.color}
+         back= {item.back}
          onSave={handleSave}
          />
          

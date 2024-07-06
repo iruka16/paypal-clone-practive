@@ -4,12 +4,15 @@ import { useState } from "react";
 import Wallet from "../screens/Wallet";
 
 
-function CashBack ({imgSRC, compName, perc, color, onSave, back}){
+function CashBack ({imgSRC, compName, perc, color, onSave, back, }){
     const[click, setclicked] = useState('save')
+     const[isDisabled, setIsDisabled] = useState(false)
     
     const handleSave = () =>{
         setclicked('shop')
         onSave({imgSRC, compName, perc, color, onSave, back})
+        setIsDisabled(true)
+
 
     }
  return(
@@ -18,7 +21,7 @@ function CashBack ({imgSRC, compName, perc, color, onSave, back}){
         <Image source={imgSRC} style={styles.image1}/>
         <Text style = {styles.text1} >{compName}</Text>
         <Text style = {styles.text1}>{perc} cash back</Text>
-        <TouchableOpacity style={styles.button1}  onPress={handleSave}>
+        <TouchableOpacity style={styles.button1}  onPress={handleSave} disabled={isDisabled}>
             <Text style={styles.text2}>{click}</Text>
         </TouchableOpacity>
 
